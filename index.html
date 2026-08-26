@@ -73,13 +73,13 @@
         <!-- Seccion de Bienvenida / Estado -->
         <section class="text-center space-y-4 pt-4">
             <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-amber-400 bg-amber-400/10 rounded-full uppercase border border-amber-400/20">
-                Pronto en línea
+                Plataforma Informativa Activa
             </span>
             <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
                 Fondos Concursables Taltal
             </h1>
             <p class="text-base text-slate-400 max-w-2xl mx-auto">
-                Espacio informativo en desarrollo para conocer las bases, plazos y detalles de los fondos concursables disponibles por las distintas empresas mandantes en la comuna.
+                Consulte bases, fechas, montos y documentación requerida para postular a los fondos concursables disponibles en la comuna.
             </p>
         </section>
 
@@ -88,8 +88,10 @@
         <!-- CONTENEDOR DE TARJETAS -->
         <div class="space-y-12">
 
-            <!-- TARJETA 1: GRUPO MINERO LAS CENIZAS -->
-            <article id="cenizas" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600">
+            <!-- TARJETA 1: GRUPO MINERO LAS CENIZAS (ACTUALIZADA CON BOTÓN DE BASES) -->
+            <article id="cenizas" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600 space-y-6">
+                
+                <!-- Cabecera de la Tarjeta -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
                     <div class="flex items-center space-x-4">
                         <div class="bg-white p-2 rounded-xl shadow-inner h-14 w-28 flex items-center justify-center">
@@ -100,23 +102,94 @@
                             <h2 class="text-xl font-bold text-white">Grupo Minero Las Cenizas</h2>
                         </div>
                     </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
-                        Próximamente
-                    </span>
-                </div>
-                <div class="py-6 space-y-3">
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Información detallada sobre las líneas de financiamiento, requisitos de postulación para organizaciones sociales de Taltal y fechas clave del fondo concursable de Las Cenizas.
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Juntas de Vecinos</span>
-                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Clubes Deportivos</span>
-                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Desarrollo Local</span>
+                    
+                    <!-- Botones de Acción (Bases PDF y Postulación) -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <a href="https://www.cenizas.cl/wp-content/uploads/BASES-FONDOS-2026-TALTAL.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors border border-slate-600">
+                            📄 Ver Bases PDF
+                        </a>
+                        <a href="https://www.cenizas.cl/fondo-consursable/fondos/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/10">
+                            Ir a Postular Online &rarr;
+                        </a>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-slate-700/60 flex justify-end">
-                    <span class="text-xs text-slate-500 italic">Bases en proceso de actualización</span>
+
+                <!-- Fechas Clave y Montos (Grid Destacado) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Fecha Límite Postulación</span>
+                        <span class="block text-sm font-bold text-amber-400 mt-1">14 de Septiembre 2026</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Anuncio de Ganadores</span>
+                        <span class="block text-sm font-bold text-white mt-1">20 de Octubre 2026</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Período de Ejecución</span>
+                        <span class="block text-sm font-bold text-white mt-1">04 Nov - 15 Dic 2026</span>
+                    </div>
                 </div>
+
+                <!-- Montos Máximos -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-emerald-950/20 border border-emerald-500/30 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-emerald-400 uppercase">Monto Máximos General</span>
+                        <span class="block text-lg font-extrabold text-white mt-0.5">$1.000.000</span>
+                    </div>
+                    <div class="bg-amber-950/20 border border-amber-500/30 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-amber-400 uppercase">Innovación, Ciencia, Tecnología y Robótica</span>
+                        <span class="block text-lg font-extrabold text-white mt-0.5">$2.500.000</span>
+                    </div>
+                </div>
+
+                <!-- Líneas de Proyecto -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                        <span>Líneas de Proyecto Habilitadas</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Equipamiento para Organizaciones
+                        </div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Mejoramiento de Infraestructura, Sedes y Entorno Comunitario
+                        </div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Medioambiente, Cultura y Recreación
+                        </div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Innovación, Ciencia, Tecnología y Robótica
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requisitos de Postulación -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                        <span>Requisitos Obligatorios</span>
+                    </h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside bg-slate-900/40 p-4 rounded-xl border border-slate-700/40 leading-relaxed">
+                        <li>Certificado de vigencia de personalidad jurídica escaneado.</li>
+                        <li>Declaración jurada simple que compruebe que no se tienen rendiciones de cuentas pendientes con otros fondos.</li>
+                        <li>RUT de la organización escaneado.</li>
+                        <li>Acompañar cotizaciones (3) y carta compromiso de ejecutores (monitores, maestros, etc.). En caso de mejoramiento de infraestructura, incluir permiso del propietario si el terreno no es propio (exceptuando a las Comunidades Changas de Taltal).</li>
+                    </ul>
+                </div>
+
+                <!-- Dudas o Consultas -->
+                <div class="pt-4 border-t border-slate-700/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-slate-400">
+                    <div>
+                        <span class="block font-semibold text-slate-300">Dudas y Consultas:</span>
+                        <a href="mailto:proyectoscomunidadestaltal@cenizas.cl" class="text-amber-400 hover:underline">proyectoscomunidadestaltal@cenizas.cl</a>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <span class="block font-semibold text-slate-300">Atención en Oficina:</span>
+                        <span>Lunes a Jueves (9:00 AM - 12:00 PM) &bull; Av. Prat 687</span>
+                    </div>
+                </div>
+
             </article>
 
             <!-- TARJETA 2: PAN AMERICAN SILVER -->
