@@ -1,60 +1,192 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fondos Concursables Taltal - En Construcción</title>
-    <!-- Tailwind CSS para un diseño rápido y moderno -->
+    <title>Fondos Concursables Taltal</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-900">
 
-    <!-- Contenido Principal -->
-    <main class="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div class="max-w-md w-full text-center space-y-8 bg-slate-800/50 p-8 sm:p-10 rounded-2xl border border-slate-700/60 shadow-xl backdrop-blur-sm">
+    <!-- HEADER CON MENÚ DE NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Icono animado o distintivo -->
-            <div class="flex justify-center">
-                <div class="bg-amber-500/10 p-4 rounded-full border border-amber-500/20 text-amber-400 animate-pulse">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <!-- Logo / Título del sitio -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="bg-amber-500/10 p-2.5 rounded-xl border border-amber-500/20 text-amber-400 group-hover:bg-amber-500/20 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                     </svg>
                 </div>
-            </div>
-
-            <!-- Títulos -->
-            <div class="space-y-3">
-                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-amber-400 bg-amber-400/10 rounded-full uppercase border border-amber-400/20">
-                    Pronto en línea
-                </span>
-                <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                    Fondos Concursables Taltal
-                </h1>
-                <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
-                    Estamos preparando este espacio para facilitar la información y postulación a fondos concursables en nuestra comuna. 
-                </p>
-            </div>
-
-            <!-- Barra de estado / Indicador -->
-            <div class="pt-4 border-t border-slate-700/60">
-                <div class="flex items-center justify-center space-x-2 text-xs text-slate-400">
-                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
-                    <span>Sitio en desarrollo activo</span>
+                <div>
+                    <span class="block font-bold text-white text-base sm:text-lg leading-tight">Fondos Taltal</span>
+                    <span class="block text-xs text-slate-400">Comuna de Taltal</span>
                 </div>
+            </a>
+
+            <!-- MENÚ DE ESCRITORIO CON LOGOS / EMPRESAS -->
+            <nav class="hidden md:flex items-center space-x-3">
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider mr-1">Mandantes:</span>
+                
+                <!-- Enlace Las Cenizas -->
+                <a href="#cenizas" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-200">
+                    <img src="https://www.cenizas.cl/wp-content/uploads/img-logo-cenizas.png" alt="Las Cenizas" class="h-5 w-auto object-contain bg-white/90 p-0.5 rounded">
+                    <span>Las Cenizas</span>
+                </a>
+
+                <!-- Enlace Pan American Silver -->
+                <a href="#panamerican" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-200">
+                    <img src="https://panamericansilver.com/wp-content/uploads/2022/02/pas-logo-standard.svg" alt="Pan American Silver" class="h-5 w-auto object-contain bg-white/90 p-0.5 rounded">
+                    <span>Pan American</span>
+                </a>
+
+                <!-- Enlace Colbún -->
+                <a href="#colbun" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-200">
+                    <img src="https://colbunf.charly.io/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMTFwR0E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--c3caaa8ceef964ce3a7a9a814313d9fb18ada406/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2QzNKbGMybDZaVWtpQ0hnM05RWTdCbFE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--58cdab6b1de1ec79b51764a6ec98f7be584f6de3/LOGO_FUNDACION_COLBUN.jpg" alt="Colbún" class="h-5 w-auto object-contain bg-white/90 p-0.5 rounded">
+                    <span>Colbún</span>
+                </a>
+            </nav>
+
+            <!-- MENÚ DESPLEGABLE (SELECT) PARA MÓVILES -->
+            <div class="md:hidden">
+                <select id="menu-empresas" onchange="location = this.value;" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    <option value="" disabled selected>🔍 Seleccionar Empresa...</option>
+                    <option value="#cenizas">Grupo Minero Las Cenizas</option>
+                    <option value="#panamerican">Pan American Silver</option>
+                    <option value="#colbun">Fundación Colbún</option>
+                </select>
             </div>
 
         </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL Y TARJETAS DE FONDOS -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- Seccion de Bienvenida / Estado -->
+        <section class="text-center space-y-4 pt-4">
+            <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-amber-400 bg-amber-400/10 rounded-full uppercase border border-amber-400/20">
+                Pronto en línea
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                Fondos Concursables Taltal
+            </h1>
+            <p class="text-base text-slate-400 max-w-2xl mx-auto">
+                Espacio informativo en desarrollo para conocer las bases, plazos y detalles de los fondos concursables disponibles por las distintas empresas mandantes en la comuna.
+            </p>
+        </section>
+
+        <div class="w-full border-t border-slate-800"></div>
+
+        <!-- CONTENEDOR DE TARJETAS -->
+        <div class="space-y-12">
+
+            <!-- TARJETA 1: GRUPO MINERO LAS CENIZAS -->
+            <article id="cenizas" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white p-2 rounded-xl shadow-inner h-14 w-28 flex items-center justify-center">
+                            <img src="https://www.cenizas.cl/wp-content/uploads/img-logo-cenizas.png" alt="Las Cenizas Logo" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Fondo Concursable Comunitario</span>
+                            <h2 class="text-xl font-bold text-white">Grupo Minero Las Cenizas</h2>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
+                        Próximamente
+                    </span>
+                </div>
+                <div class="py-6 space-y-3">
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Información detallada sobre las líneas de financiamiento, requisitos de postulación para organizaciones sociales de Taltal y fechas clave del fondo concursable de Las Cenizas.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Juntas de Vecinos</span>
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Clubes Deportivos</span>
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Desarrollo Local</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-slate-700/60 flex justify-end">
+                    <span class="text-xs text-slate-500 italic">Bases en proceso de actualización</span>
+                </div>
+            </article>
+
+            <!-- TARJETA 2: PAN AMERICAN SILVER -->
+            <article id="panamerican" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white p-2 rounded-xl shadow-inner h-14 w-28 flex items-center justify-center">
+                            <img src="https://panamericansilver.com/wp-content/uploads/2022/02/pas-logo-standard.svg" alt="Pan American Silver Logo" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Fondos Concursables</span>
+                            <h2 class="text-xl font-bold text-white">Pan American Silver</h2>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
+                        Próximamente
+                    </span>
+                </div>
+                <div class="py-6 space-y-3">
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Detalles de los fondos concursables orientados al fortalecimiento comunitario, iniciativas educativas, medioambientales y mejora de espacios públicos en la comuna.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Medio Ambiente</span>
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Cultura</span>
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Innovación Social</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-slate-700/60 flex justify-end">
+                    <span class="text-xs text-slate-500 italic">Bases en proceso de actualización</span>
+                </div>
+            </article>
+
+            <!-- TARJETA 3: FUNDACIÓN COLBÚN -->
+            <article id="colbun" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white p-2 rounded-xl shadow-inner h-14 w-28 flex items-center justify-center">
+                            <img src="https://colbunf.charly.io/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMTFwR0E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--c3caaa8ceef964ce3a7a9a814313d9fb18ada406/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2QzNKbGMybDZaVWtpQ0hnM05RWTdCbFE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--58cdab6b1de1ec79b51764a6ec98f7be584f6de3/LOGO_FUNDACION_COLBUN.jpg" alt="Fundación Colbún Logo" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Concurso de Fondos</span>
+                            <h2 class="text-xl font-bold text-white">Fundación Colbún</h2>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
+                        Próximamente
+                    </span>
+                </div>
+                <div class="py-6 space-y-3">
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Información oficial sobre fondos concursables, postulaciones abiertas y requisitos destinados a potenciar proyectos locales, emprendimientos y agrupaciones comunitarias.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Emprendimiento</span>
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Capacitación</span>
+                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Equipamiento</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-slate-700/60 flex justify-end">
+                    <span class="text-xs text-slate-500 italic">Bases en proceso de actualización</span>
+                </div>
+            </article>
+
+        </div>
+
     </main>
 
-    <!-- Pie de página -->
-    <footer class="py-6 text-center text-xs text-slate-500">
+    <!-- PIE DE PÁGINA -->
+    <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500 mt-16">
         <p>&copy; 2026 Fondos Concursables Taltal. Todos los derechos reservados.</p>
     </footer>
 
