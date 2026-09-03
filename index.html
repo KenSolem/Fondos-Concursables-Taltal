@@ -330,6 +330,66 @@
 
             </article>
 
+            <!-- TARJETA 4: MURO DE MENSAJES Y CHAT COMUNITARIO (EXTINCIÓN 24 HRS) -->
+            <article id="comunidad" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600 space-y-6">
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-amber-500/10 p-3 rounded-xl border border-amber-500/20 text-amber-400">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Espacio Comunitario Taltal</span>
+                            <h2 class="text-xl font-bold text-white">Muro de Mensajes en Vivo</h2>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 w-fit">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse mr-1.5"></span>
+                        Mensajes expiran en 24 hrs
+                    </span>
+                </div>
+
+                <!-- Formulario para enviar mensaje -->
+                <form id="chat-form" class="space-y-4 bg-slate-900/60 p-4 sm:p-6 rounded-xl border border-slate-700/50">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Tu Nombre u Organización</label>
+                            <input type="text" id="chat-user" required placeholder="Ej. Junta de Vecinos N°2" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">Empresa / Fondo al que apunta</label>
+                            <select id="chat-topic" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <option value="General">General / Comunidad</option>
+                                <option value="Las Cenizas">Grupo Minero Las Cenizas</option>
+                                <option value="Pan American Silver">Pan American Silver</option>
+                                <option value="Fundación Colbún">Fundación Colbún</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Mensaje o Consulta</label>
+                        <textarea id="chat-msg" rows="2" required placeholder="Escribe tu consulta o aviso rápido aquí..." class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg text-xs transition-colors shadow-md">
+                            Publicar Mensaje &rarr;
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Contenedor de la lista de mensajes en vivo -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Mensajes Recientes (Últimas 24 horas)</h3>
+                    <div id="chat-messages-container" class="space-y-3 max-h-80 overflow-y-auto pr-1">
+                        <!-- Los mensajes se inyectan dinámicamente aquí -->
+                        <p id="no-messages" class="text-xs text-slate-500 italic text-center py-4">No hay mensajes activos en este momento. ¡Sé el primero en escribir!</p>
+                    </div>
+                </div>
+
+            </article>
+
         </div>
 
     </main>
@@ -338,6 +398,79 @@
     <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500 mt-16">
         <p>&copy; 2026 Fondos Concursables Taltal. Esta plataforma es una iniciativa ciudadana y personal, desarrollada de manera independiente y sin fines de lucro, con el único propósito de apoyar a la comunidad.</p>
     </footer>
+<script>
+    // Sistema de Muro con expiración a 24 horas usando localStorage del navegador
+    const STORAGE_KEY = 'taltal_fondos_chat_v1';
+    const EXPIRATION_TIME = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
 
+    function loadMessages() {
+        const container = document.getElementById('chat-messages-container');
+        const noMsgEl = document.getElementById('no-messages');
+        
+        let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        const now = new Date().getTime();
+
+        // Filtrar mensajes que tengan menos de 24 horas
+        data = data.filter(item => (now - item.timestamp) < EXPIRATION_TIME);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+        container.innerHTML = '';
+        if (data.length === 0) {
+            container.innerHTML = '<p id="no-messages" class="text-xs text-slate-500 italic text-center py-4">No hay mensajes activos en este momento. ¡Sé el primero en escribir!</p>';
+            return;
+        }
+
+        data.reverse().forEach(item => {
+            const timeAgo = getTimeAgo(item.timestamp);
+            const card = document.createElement('div');
+            card.className = 'bg-slate-900/40 border border-slate-700/40 p-4 rounded-xl space-y-1.5';
+            card.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-amber-400">${escapeHtml(item.user)} <span class="text-slate-500 font-normal">(${escapeHtml(item.topic)})</span></span>
+                    <span class="text-[10px] text-slate-500">${timeAgo}</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">${escapeHtml(item.message)}</p>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    document.getElementById('chat-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const user = document.getElementById('chat-user').value.trim();
+        const topic = document.getElementById('chat-topic').value;
+        const message = document.getElementById('chat-msg').value.trim();
+
+        if(!user || !message) return;
+
+        let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        data.push({
+            user: user,
+            topic: topic,
+            message: message,
+            timestamp: new Date().getTime()
+        });
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        document.getElementById('chat-msg').value = '';
+        loadMessages();
+    });
+
+    function getTimeAgo(timestamp) {
+        const seconds = Math.floor((new Date().getTime() - timestamp) / 1000);
+        if (seconds < 60) return 'Hace un momento';
+        const minutes = Math.floor(seconds / 60);
+        if (minutes < 60) return `Hace ${minutes} min`;
+        const hours = Math.floor(minutes / 60);
+        return `Hace ${hours} hr${hours > 1 ? 's' : ''}`;
+    }
+
+    function escapeHtml(text) {
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    // Cargar al iniciar la página
+    loadMessages();
+</script>
 </body>
 </html>
