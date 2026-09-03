@@ -192,35 +192,112 @@
 
             </article>
 
-            <!-- TARJETA 2: PAN AMERICAN SILVER -->
-            <article id="panamerican" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600">
+            <!-- TARJETA 2: PAN AMERICAN SILVER (ACTUALIZADA CON BASES FIC 2026) -->
+            <article id="panamerican" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600 space-y-6">
+                
+                <!-- Cabecera de la Tarjeta -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
                     <div class="flex items-center space-x-4">
                         <div class="bg-white p-2 rounded-xl shadow-inner h-14 w-28 flex items-center justify-center">
                             <img src="https://panamericansilver.com/wp-content/uploads/2022/02/pas-logo-standard.svg" alt="Pan American Silver Logo" class="max-h-full max-w-full object-contain">
                         </div>
                         <div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Fondos Concursables</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Fondo de Inversión Comunitaria (FIC) 2026</span>
                             <h2 class="text-xl font-bold text-white">Pan American Silver</h2>
                         </div>
                     </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 w-fit">
-                        Próximamente
-                    </span>
-                </div>
-                <div class="py-6 space-y-3">
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Detalles de los fondos concursables orientados al fortalecimiento comunitario, iniciativas educativas, medioambientales y mejora de espacios públicos en la comuna.
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Medio Ambiente</span>
-                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Cultura</span>
-                        <span class="text-xs bg-slate-700/50 text-slate-300 px-2.5 py-1 rounded-md border border-slate-600/40">Innovación Social</span>
+                    
+                    <!-- Botones de Acción (Bases PDF y Postulación) -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors border border-slate-600">
+                            📄 Ver Bases PDF
+                        </a>
+                        <a href="https://es.surveymonkey.com/r/V5FRRRN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/10">
+                            Ir a Postular Online &rarr;
+                        </a>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-slate-700/60 flex justify-end">
-                    <span class="text-xs text-slate-500 italic">Bases en proceso de actualización</span>
+
+                <!-- Fechas Clave y Montos (Grid Destacado) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Fecha Límite Postulación</span>
+                        <span class="block text-sm font-bold text-amber-400 mt-1">07 de Octubre 2026 (11:59 AM)</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Notificación Ganadores</span>
+                        <span class="block text-sm font-bold text-white mt-1">21 de Octubre 2026</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Cierre Compras Ejecución</span>
+                        <span class="block text-sm font-bold text-white mt-1">15 de Diciembre 2026</span>
+                    </div>
                 </div>
+
+                <!-- Montos Mínimos y Máximos / Cofinanciamiento -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-emerald-950/20 border border-emerald-500/30 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-emerald-400 uppercase">Aporte Máximo Fundación (90%)</span>
+                        <span class="block text-lg font-extrabold text-white mt-0.5">$3.150.000 <span class="text-xs font-normal text-slate-400">(Proyecto total máx. $3.500.000)</span></span>
+                    </div>
+                    <div class="bg-amber-950/20 border border-amber-500/30 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-amber-400 uppercase">Cofinanciamiento Organización (10%)</span>
+                        <span class="block text-lg font-extrabold text-white mt-0.5">Mínimo $150.000 <span class="text-xs font-normal text-slate-400">(Monto mín. total $1.500.000)</span></span>
+                    </div>
+                </div>
+
+                <!-- Líneas de Financiamiento -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                        <span>Líneas de Financiamiento Habilitadas</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Deporte y Salud (20%)
+                        </div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Medioambiente y Seguridad (20%)
+                        </div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Arte, Patrimonio y Cultura (30%)
+                        </div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
+                            • Desarrollo Social (30%)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requisitos de Postulación Obligatoria -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                        <span>Documentación Obligatoria (PDF)</span>
+                    </h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside bg-slate-900/40 p-4 rounded-xl border border-slate-700/40 leading-relaxed">
+                        <li>Ficha de Postulación (Anexo 1).</li>
+                        <li>Copia del RUT de la Organización del SII.</li>
+                        <li>Copia cédula de identidad del representante legal.</li>
+                        <li>Certificado de Personalidad Jurídica con identificación de la directiva vigente.</li>
+                        <li>Copia del Acta de asamblea que autoriza la postulación y Lista de Asistencia de los socios.</li>
+                        <li>Declaración Jurada Simple (Anexo 2).</li>
+                        <li>3 Cotizaciones por cada compra considerada (máximo 4 compras).</li>
+                        <li>Antecedentes legales de pertenencia del terreno (comodatos, usufructos, arriendos o autorización del Concejo Municipal) para proyectos de mejoramiento de infraestructura, documentados y notariados al 2026.</li>
+                    </ul>
+                </div>
+
+                <!-- Dudas o Consultas -->
+                <div class="pt-4 border-t border-slate-700/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-slate-400">
+                    <div>
+                        <span class="block font-semibold text-slate-300">Dudas y Consultas:</span>
+                        <a href="mailto:informacionfundacion@cl.panamericansilver.com" class="text-amber-400 hover:underline">informacionfundacion@cl.panamericansilver.com</a>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <span class="block font-semibold text-slate-300">Plataforma Oficial:</span>
+                        <span>SurveyMonkey (Cierre: 07 Octubre 2026)</span>
+                    </div>
+                </div>
+
             </article>
 
             <!-- TARJETA 3: FUNDACIÓN COLBÚN / JUNTO AL BARRIO -->
