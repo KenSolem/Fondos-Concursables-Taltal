@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fondos Concursables Taltal 2026 </title>
+    <title>Fondos Concursables Taltal 2026</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -33,34 +33,42 @@
 
             <!-- MENÚ DE ESCRITORIO CON LOGOS / EMPRESAS -->
             <nav class="hidden md:flex items-center space-x-3">
-                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider mr-1">Mandantes:</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider mr-1">Fondos Activos:</span>
+                <!-- Enlace Engie -->
+                <a href="#engie" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-200">
+                    <img src="https://lh3.googleusercontent.com/d/1YutDytEE4gpG7v3_jhHih6UQpjnxPPp2=s220" alt="Engie" class="h-5 w-auto object-contain bg-white/90 p-0.5 rounded">
+                    <span>Engie (Activo)</span>
+                </a>
+
+                <span class="text-xs text-slate-500 font-medium uppercase tracking-wider mx-1">| Cerrados:</span>
                 
                 <!-- Enlace Las Cenizas -->
-                <a href="#cenizas" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-200">
-                    <img src="https://www.cenizas.cl/wp-content/uploads/img-logo-cenizas.png" alt="Las Cenizas" class="h-5 w-auto object-contain bg-white/90 p-0.5 rounded">
+                <a href="#cenizas" class="flex items-center space-x-2 bg-slate-800/60 hover:bg-slate-700 border border-slate-700/50 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-400">
+                    <img src="https://www.cenizas.cl/wp-content/uploads/img-logo-cenizas.png" alt="Las Cenizas" class="h-4 w-auto object-contain bg-white/90 p-0.5 rounded opacity-75">
                     <span>Las Cenizas</span>
                 </a>
 
                 <!-- Enlace Pan American Silver -->
-                <a href="#panamerican" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-200">
-                    <img src="https://panamericansilver.com/wp-content/uploads/2022/02/pas-logo-standard.svg" alt="Pan American Silver" class="h-5 w-auto object-contain bg-white/90 p-0.5 rounded">
+                <a href="#panamerican" class="flex items-center space-x-2 bg-slate-800/60 hover:bg-slate-700 border border-slate-700/50 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-400">
+                    <img src="https://panamericansilver.com/wp-content/uploads/2022/02/pas-logo-standard.svg" alt="Pan American Silver" class="h-4 w-auto object-contain bg-white/90 p-0.5 rounded opacity-75">
                     <span>Pan American</span>
                 </a>
 
                 <!-- Enlace Colbún / Junto al Barrio -->
-                <a href="#colbun" class="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-200">
-                    <img src="https://www.colbun.cl/resourcePackages/colbunweb/assets/dist/images/header/logo-1-letras-grises.png" alt="Fundación Colbún" class="h-5 w-auto object-contain bg-white/90 p-0.5 rounded">
-                    <span>Colbún / Junto al Barrio</span>
+                <a href="#colbun" class="flex items-center space-x-2 bg-slate-800/60 hover:bg-slate-700 border border-slate-700/50 px-3 py-1.5 rounded-lg transition-all text-xs font-medium text-slate-400">
+                    <img src="https://www.colbun.cl/resourcePackages/colbunweb/assets/dist/images/header/logo-1-letras-grises.png" alt="Fundación Colbún" class="h-4 w-auto object-contain bg-white/90 p-0.5 rounded opacity-75">
+                    <span>Colbún</span>
                 </a>
             </nav>
 
             <!-- MENÚ DESPLEGABLE (SELECT) PARA MÓVILES -->
             <div class="md:hidden">
                 <select id="menu-empresas" onchange="location = this.value;" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                    <option value="" disabled selected>🔍 Seleccionar Empresa...</option>
-                    <option value="#cenizas">Grupo Minero Las Cenizas</option>
-                    <option value="#panamerican">Pan American Silver</option>
-                    <option value="#colbun">Fundación Colbún / Junto al Barrio</option>
+                    <option value="" disabled selected>🔍 Seleccionar Fondo...</option>
+                    <option value="#engie">🟢 Engie (Activo)</option>
+                    <option value="#cenizas">⚪ Grupo Minero Las Cenizas (Cerrado)</option>
+                    <option value="#panamerican">⚪ Pan American Silver (Cerrado)</option>
+                    <option value="#colbun">⚪ Fundación Colbún (Cerrado)</option>
                 </select>
             </div>
 
@@ -88,8 +96,118 @@
         <!-- CONTENEDOR DE TARJETAS -->
         <div class="space-y-12">
 
-            <!-- TARJETA 1: GRUPO MINERO LAS CENIZAS -->
-            <article id="cenizas" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600 space-y-6">
+            <!-- TARJETA NUEVA: ENGIE (ACTIVA) -->
+            <article id="engie" class="scroll-mt-28 bg-slate-800/60 rounded-2xl border-2 border-amber-500/50 p-6 sm:p-8 shadow-2xl backdrop-blur-sm space-y-6">
+                
+                <!-- Cabecera de la Tarjeta -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white p-2 rounded-xl shadow-inner h-14 w-28 flex items-center justify-center">
+                            <img src="https://lh3.googleusercontent.com/d/1YutDytEE4gpG7v3_jhHih6UQpjnxPPp2=s220" alt="Engie Logo" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Fondo Concursable 2026-2027 &bull; Mesa ENGIE Comunidad Taltal</span>
+                            <h2 class="text-xl font-bold text-white">Apoyo ENGIE Energía Chile a Iniciativas Locales</h2>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones de Acción (Bases PDF / Drive y Formulario) -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <a href="https://docs.google.com/document/d/1VZUVvbEUHRb4V_k1TSH2W1tqZkiUSWJY/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors border border-slate-600">
+                            📄 Ver Bases (Drive)
+                        </a>
+                        <a href="https://docs.google.com/document/d/1NfH7RWgH6Ne2T6XuRGeqNLbDPV87YBz1/edit?usp=sharing&ouid=118404519238951027545&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/10">
+                            📥 Formulario Postulación &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Estado Activo Destacado -->
+                <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+                        <span class="text-xs sm:text-sm font-bold text-amber-300">¡Convocatoria Abierta! Postulaciones hasta el 16 de Noviembre de 2026 (12:00 hrs)</span>
+                    </div>
+                    <span class="hidden sm:inline-block text-xs bg-amber-500 text-slate-900 font-bold px-2.5 py-1 rounded-md">ACTIVO</span>
+                </div>
+
+                <!-- Fechas Clave y Montos (Grid Destacado) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Lanzamiento / Inicio</span>
+                        <span class="block text-sm font-bold text-white mt-1">16 de Octubre 2026</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Fecha Límite Postulación</span>
+                        <span class="block text-sm font-bold text-amber-400 mt-1">16 de Noviembre 2026 (12:00 hrs)</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Evaluación y Selección</span>
+                        <span class="block text-sm font-bold text-white mt-1">17 Nov - 15 Dic 2026</span>
+                    </div>
+                </div>
+
+                <!-- Opciones de Financiamiento -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-emerald-950/20 border border-emerald-500/30 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-emerald-400 uppercase">Opción 1: Proyectos de \$1.000.000</span>
+                        <span class="block text-lg font-extrabold text-white mt-0.5">Se seleccionarán 7 proyectos</span>
+                    </div>
+                    <div class="bg-amber-950/20 border border-amber-500/30 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-amber-400 uppercase">Opción 2: Proyectos de \$500.000</span>
+                        <span class="block text-lg font-extrabold text-white mt-0.5">Se seleccionarán 6 proyectos</span>
+                    </div>
+                </div>
+
+                <!-- Enfoques de Proyecto -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                        <span>Enfoques Prioritarios</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Infraestructura sustentable</div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Educación y cuidado medioambiental</div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Promoción de deporte, actividades recreativas – culturales y familiares</div>
+                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Cuidado y atención de adultos mayores</div>
+                    </div>
+                </div>
+
+                <!-- Requisitos de Postulación -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                        <span>Documentación Obligatoria a Entregar</span>
+                    </h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside bg-slate-900/40 p-4 rounded-xl border border-slate-700/40 leading-relaxed">
+                        <li>Carta de postulación timbrada y firmada por el representante legal.</li>
+                        <li>Formulario de Postulación completo.</li>
+                        <li>Fotocopias Cédula de Identidad del Presidente/Representante legal.</li>
+                        <li>Declaración Jurada simple de contar con los requisitos para postular.</li>
+                        <li>Documento que acredite vigencia de la Personalidad Jurídica.</li>
+                        <li>Cotizaciones de respaldo (máximo 2 proveedores, idealmente locales).</li>
+                        <li>Documento que acredite que la Asamblea está informada y de acuerdo.</li>
+                        <li>Aporte de la organización (mínimo 5% en dinero depositado en cuenta bancaria o monetizado mediante flete/transporte con carta explicativa).</li>
+                    </ul>
+                </div>
+
+                <!-- Recepción de Antecedentes y Dudas -->
+                <div class="pt-4 border-t border-slate-700/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-slate-400">
+                    <div>
+                        <span class="block font-semibold text-slate-300">Entrega de Postulaciones (Sobre Cerrado):</span>
+                        <span>DIDECO (Edificio Consistorial, 2° piso) o Oficina Comunitaria ENGIE (Av. Manuel Antonio Matta 1403)</span>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <span class="block font-semibold text-slate-300">Consultas:</span>
+                        <a href="mailto:luis.morales@engie.com" class="text-amber-400 hover:underline">luis.morales@engie.com</a> / <a href="mailto:luis.poblete@engie.com" class="text-amber-400 hover:underline">luis.poblete@engie.com</a>
+                    </div>
+                </div>
+
+            </article>
+
+
+            <!-- TARJETA 1: GRUPO MINERO LAS CENIZAS (CERRADO) -->
+            <article id="cenizas" class="scroll-mt-28 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-6 sm:p-8 shadow-xl backdrop-blur-sm space-y-6 opacity-85">
                 
                 <!-- Cabecera de la Tarjeta -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
@@ -98,7 +216,7 @@
                             <img src="https://www.cenizas.cl/wp-content/uploads/img-logo-cenizas.png" alt="Las Cenizas Logo" class="max-h-full max-w-full object-contain">
                         </div>
                         <div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400"> Fondos Concursables de Desarrollo Comunitario para Organizaciones Sociales de Taltal</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Fondo Concursable Comunitario &bull; <strong class="text-rose-400">CERRADO</strong></span>
                             <h2 class="text-xl font-bold text-white">Grupo Minero Las Cenizas</h2>
                         </div>
                     </div>
@@ -108,92 +226,63 @@
                         <a href="https://www.cenizas.cl/wp-content/uploads/BASES-FONDOS-2026-TALTAL.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors border border-slate-600">
                             📄 Ver Bases PDF
                         </a>
-                        <a href="https://www.cenizas.cl/fondo-consursable/fondos/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/10">
-                            Ir a Postular Online &rarr;
-                        </a>
+                        <span class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed">
+                            Postulación Cerrada
+                        </span>
                     </div>
                 </div>
 
                 <!-- Fechas Clave y Montos (Grid Destacado) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Fecha Límite Postulación</span>
-                        <span class="block text-sm font-bold text-amber-400 mt-1">14 de Septiembre 2026</span>
+                        <span class="block text-xs font-medium text-slate-500 uppercase tracking-wider">Fecha Límite Postulación</span>
+                        <span class="block text-sm font-bold text-slate-400 mt-1">14 de Septiembre 2026 (Cerrado)</span>
                     </div>
                     <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Anuncio de Ganadores</span>
-                        <span class="block text-sm font-bold text-white mt-1">20 de Octubre 2026</span>
+                        <span class="block text-xs font-medium text-slate-500 uppercase tracking-wider">Anuncio de Ganadores</span>
+                        <span class="block text-sm font-bold text-slate-400 mt-1">20 de Octubre 2026</span>
                     </div>
                     <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Período de Ejecución</span>
-                        <span class="block text-sm font-bold text-white mt-1">04 Nov - 15 Dic 2026</span>
+                        <span class="block text-xs font-medium text-slate-500 uppercase tracking-wider">Período de Ejecución</span>
+                        <span class="block text-sm font-bold text-slate-400 mt-1">04 Nov - 15 Dic 2026</span>
                     </div>
                 </div>
 
                 <!-- Montos Máximos -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-emerald-950/20 border border-emerald-500/30 p-4 rounded-xl">
-                        <span class="block text-xs font-medium text-emerald-400 uppercase">Monto Máximo General</span>
-                        <span class="block text-lg font-extrabold text-white mt-0.5">$1.000.000</span>
+                    <div class="bg-slate-900/40 border border-slate-700/40 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-slate-500 uppercase">Monto Máximo General</span>
+                        <span class="block text-lg font-extrabold text-slate-300 mt-0.5">\$1.000.000</span>
                     </div>
-                    <div class="bg-amber-950/20 border border-amber-500/30 p-4 rounded-xl">
-                        <span class="block text-xs font-medium text-amber-400 uppercase">Innovación, Ciencia, Tecnología y Robótica</span>
-                        <span class="block text-lg font-extrabold text-white mt-0.5">$2.500.000</span>
+                    <div class="bg-slate-900/40 border border-slate-700/40 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-slate-500 uppercase">Innovación, Ciencia, Tecnología y Robótica</span>
+                        <span class="block text-lg font-extrabold text-slate-300 mt-0.5">\$2.500.000</span>
                     </div>
                 </div>
 
                 <!-- Líneas de Proyecto -->
                 <div class="space-y-3 pt-2">
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
-                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-slate-500 rounded-full"></span>
                         <span>Líneas de Proyecto Habilitadas</span>
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Equipamiento para Organizaciones
-                        </div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Mejoramiento de Infraestructura, Sedes y Entorno Comunitario
-                        </div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Medioambiente, Cultura y Recreación
-                        </div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Innovación, Ciencia, Tecnología y Robótica
-                        </div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-700/30 text-xs text-slate-400 font-medium">• Equipamiento para Organizaciones</div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-700/30 text-xs text-slate-400 font-medium">• Mejoramiento de Infraestructura, Sedes y Entorno Comunitario</div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-700/30 text-xs text-slate-400 font-medium">• Medioambiente, Cultura y Recreación</div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-700/30 text-xs text-slate-400 font-medium">• Innovación, Ciencia, Tecnología y Robótica</div>
                     </div>
                 </div>
 
-                <!-- Requisitos de Postulación -->
-                <div class="space-y-3 pt-2">
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
-                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
-                        <span>Requisitos Obligatorios</span>
-                    </h3>
-                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside bg-slate-900/40 p-4 rounded-xl border border-slate-700/40 leading-relaxed">
-                        <li>Certificado de directiva y vigencia de personalidad jurídica escaneado.</li>
-                        <li>Declaración jurada simple que compruebe que no se tienen rendiciones de cuentas pendientes con otros fondos.</li>
-                        <li>RUT de la organización escaneado.</li>
-                        <li>Acompañar cotizaciones (3) y carta compromiso de ejecutores (monitores, maestros, etc.). En caso de mejoramiento de infraestructura, incluir permiso del propietario si el terreno no es propio (exceptuando a las Comunidades Changas de Taltal).</li>
-                    </ul>
-                </div>
-
-                <!-- Dudas o Consultas -->
-                <div class="pt-4 border-t border-slate-700/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-slate-400">
-                    <div>
-                        <span class="block font-semibold text-slate-300">Dudas y Consultas:</span>
-                        <a href="mailto:proyectoscomunidadestaltal@cenizas.cl" class="text-amber-400 hover:underline">proyectoscomunidadestaltal@cenizas.cl</a>
-                    </div>
-                    <div class="text-left sm:text-right">
-                        <span class="block font-semibold text-slate-300">Atención en Oficina (Av. Prat 687):</span>
-                        <span>Lunes a Jueves (9:00 AM - 12:00 PM)</span>
-                    </div>
+                <div class="pt-4 border-t border-slate-700/60 flex justify-between text-xs text-slate-500">
+                    <span>Contacto: proyectoscomunidadestaltal@cenizas.cl</span>
+                    <span>Estado: Proceso Concursable Finalizado</span>
                 </div>
 
             </article>
 
-            <!-- TARJETA 2: PAN AMERICAN SILVER (ACTUALIZADA CON BASES FIC 2026) -->
-            <article id="panamerican" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600 space-y-6">
+            <!-- TARJETA 2: PAN AMERICAN SILVER (CERRADO) -->
+            <article id="panamerican" class="scroll-mt-28 bg-slate-800/20 rounded-2xl border border-slate-700/40 p-6 sm:p-8 shadow-xl backdrop-blur-sm space-y-6 opacity-85">
                 
                 <!-- Cabecera de la Tarjeta -->
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
@@ -202,7 +291,7 @@
                             <img src="https://panamericansilver.com/wp-content/uploads/2022/02/pas-logo-standard.svg" alt="Pan American Silver Logo" class="max-h-full max-w-full object-contain">
                         </div>
                         <div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Fondo de Inversión Comunitaria (FIC) 2026</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Fondo de Inversión Comunitaria (FIC) 2026 &bull; <strong class="text-rose-400">CERRADO</strong></span>
                             <h2 class="text-xl font-bold text-white">Pan American Silver</h2>
                         </div>
                     </div>
@@ -212,342 +301,47 @@
                         <a href="https://drive.google.com/file/d/1pX10M7XJJmeY7-flX6cpF1N6K4CLptFR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors border border-slate-600">
                             📄 Ver Bases PDF
                         </a>
-                        <a href="https://es.surveymonkey.com/r/V5FRRRN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/10">
-                            Ir a Postular Online &rarr;
-                        </a>
+                        <span class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed">
+                            Postulación Cerrada
+                        </span>
                     </div>
                 </div>
 
                 <!-- Fechas Clave y Montos (Grid Destacado) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Fecha Límite Postulación</span>
-                        <span class="block text-sm font-bold text-amber-400 mt-1">07 de Octubre 2026 (11:59 AM)</span>
+                        <span class="block text-xs font-medium text-slate-500 uppercase tracking-wider">Fecha Límite Postulación</span>
+                        <span class="block text-sm font-bold text-slate-400 mt-1">07 de Octubre 2026 (Cerrado)</span>
                     </div>
                     <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Notificación Ganadores</span>
-                        <span class="block text-sm font-bold text-white mt-1">21 de Octubre 2026</span>
+                        <span class="block text-xs font-medium text-slate-500 uppercase tracking-wider">Notificación Ganadores</span>
+                        <span class="block text-sm font-bold text-slate-400 mt-1">21 de Octubre 2026</span>
                     </div>
                     <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Cierre Compras Ejecución</span>
-                        <span class="block text-sm font-bold text-white mt-1">15 de Diciembre 2026</span>
+                        <span class="block text-xs font-medium text-slate-500 uppercase tracking-wider">Cierre Compras Ejecución</span>
+                        <span class="block text-sm font-bold text-slate-400 mt-1">15 de Diciembre 2026</span>
                     </div>
                 </div>
 
                 <!-- Montos Mínimos y Máximos / Cofinanciamiento -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-emerald-950/20 border border-emerald-500/30 p-4 rounded-xl">
-                        <span class="block text-xs font-medium text-emerald-400 uppercase">Aporte Máximo Fundación (90%)</span>
-                        <span class="block text-lg font-extrabold text-white mt-0.5">$3.150.000 <span class="text-xs font-normal text-slate-400">(Proyecto total máx. $3.500.000)</span></span>
+                    <div class="bg-slate-900/40 border border-slate-700/40 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-slate-500 uppercase">Aporte Máximo Fundación (90%)</span>
+                        <span class="block text-lg font-extrabold text-slate-300 mt-0.5">\$3.150.000</span>
                     </div>
-                    <div class="bg-amber-950/20 border border-amber-500/30 p-4 rounded-xl">
-                        <span class="block text-xs font-medium text-amber-400 uppercase">Cofinanciamiento Organización (10%)</span>
-                        <span class="block text-lg font-extrabold text-white mt-0.5">Mínimo $150.000 <span class="text-xs font-normal text-slate-400">(Monto mín. total $1.500.000)</span></span>
+                    <div class="bg-slate-900/40 border border-slate-700/40 p-4 rounded-xl">
+                        <span class="block text-xs font-medium text-slate-500 uppercase">Cofinanciamiento Organización (10%)</span>
+                        <span class="block text-lg font-extrabold text-slate-300 mt-0.5">Mínimo \$150.000</span>
                     </div>
                 </div>
 
                 <!-- Líneas de Financiamiento -->
                 <div class="space-y-3 pt-2">
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
-                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-slate-500 rounded-full"></span>
                         <span>Líneas de Financiamiento Habilitadas</span>
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Deporte y Salud (20%)
-                        </div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Medioambiente y Seguridad (20%)
-                        </div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Arte, Patrimonio y Cultura (30%)
-                        </div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">
-                            • Desarrollo Social (30%)
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Requisitos de Postulación Obligatoria -->
-                <div class="space-y-3 pt-2">
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
-                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
-                        <span>Documentación Obligatoria (PDF)</span>
-                    </h3>
-                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside bg-slate-900/40 p-4 rounded-xl border border-slate-700/40 leading-relaxed">
-                        <li>Ficha de Postulación (Anexo 1).</li>
-                        <li>Copia del RUT de la Organización del SII.</li>
-                        <li>Copia cédula de identidad del representante legal.</li>
-                        <li>Certificado de Personalidad Jurídica con identificación de la directiva vigente.</li>
-                        <li>Copia del Acta de asamblea que autoriza la postulación y Lista de Asistencia de los socios.</li>
-                        <li>Declaración Jurada Simple (Anexo 2).</li>
-                        <li>3 Cotizaciones por cada compra considerada (máximo 4 compras).</li>
-                        <li>Antecedentes legales de pertenencia del terreno (comodatos, usufructos, arriendos o autorización del Concejo Municipal) para proyectos de mejoramiento de infraestructura, documentados y notariados al 2026.</li>
-                    </ul>
-                </div>
-
-                <!-- Dudas o Consultas -->
-                <div class="pt-4 border-t border-slate-700/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-slate-400">
-                    <div>
-                        <span class="block font-semibold text-slate-300">Dudas y Consultas:</span>
-                        <a href="mailto:informacionfundacion@cl.panamericansilver.com" class="text-amber-400 hover:underline">informacionfundacion@cl.panamericansilver.com</a>
-                    </div>
-                    <div class="text-left sm:text-right">
-                        <span class="block font-semibold text-slate-300">Plataforma Oficial:</span>
-                        <span>SurveyMonkey (Cierre: 07 Octubre 2026)</span>
-                    </div>
-                </div>
-
-            </article>
-
-            <!-- TARJETA 3: FUNDACIÓN COLBÚN / JUNTO AL BARRIO -->
-            <article id="colbun" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600 space-y-6">
-                
-                <!-- Cabecera de la Tarjeta -->
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-white p-2 rounded-xl shadow-inner h-14 w-28 flex items-center justify-center">
-                            <img src="https://www.colbun.cl/resourcePackages/colbunweb/assets/dist/images/header/logo-1-letras-grises.png" alt="Fundación Colbún Logo" class="max-h-full max-w-full object-contain">
-                        </div>
-                        <div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Fondo de Desarrollo Social Taltal</span>
-                            <h2 class="text-xl font-bold text-white">Colbún &bull; Junto Al Barrio </h2>
-                        </div>
-                    </div>
-                    
-                    <!-- Botones de Acción (Bases PDF y Postulación) -->
-                    <div class="flex flex-wrap items-center gap-2">
-                        <a href="https://drive.google.com/file/d/1y3Femd-RPm5Q0WWphWzCFJ3zZsqnMVyV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors border border-slate-600">
-                            📄 Ver Bases PDF
-                        </a>
-                        <a href="https://colbunf.charly.io/companies/1090852/evaluations/38220" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/10">
-                            Ir a Postular Online &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Fechas Clave y Montos (Grid Destacado) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Fecha Límite Postulación</span>
-                        <span class="block text-sm font-bold text-amber-400 mt-1">16 de Septiembre 2026</span>
-                    </div>
-                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Anuncio de Ganadores</span>
-                        <span class="block text-sm font-bold text-white mt-1">05 al 09 Octubre 2026</span>
-                    </div>
-                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
-                        <span class="block text-xs font-medium text-slate-400 uppercase tracking-wider">Período de Ejecución</span>
-                        <span class="block text-sm font-bold text-white mt-1">12 Oct - 29 Nov 2026</span>
-                    </div>
-                </div>
-
-                <!-- Montos Máximos -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-emerald-950/20 border border-emerald-500/30 p-4 rounded-xl">
-                        <span class="block text-xs font-medium text-emerald-400 uppercase">Monto Máximo General</span>
-                        <span class="block text-lg font-extrabold text-white mt-0.5">$1.500.000</span>
-                    </div>
-                    <div class="bg-amber-950/20 border border-amber-500/30 p-4 rounded-xl">
-                        <span class="block text-xs font-medium text-amber-400 uppercase">Postulación Colectiva / Asociativa</span>
-                        <span class="block text-lg font-extrabold text-white mt-0.5">$4.000.000</span>
-                    </div>
-                </div>
-
-                <!-- Líneas de Proyecto -->
-                <div class="space-y-3 pt-2">
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
-                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
-                        <span>Líneas de Proyecto Habilitadas</span>
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Seguridad</div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Prevención de Consumo Drogas</div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Deporte</div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Cultura</div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Medioambiente</div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Equipamiento</div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Infraestructura</div>
-                        <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/40 text-xs text-slate-300 font-medium">• Desarrollo Organizacional</div>
-                    </div>
-                </div>
-
-                <!-- Requisitos de Postulación -->
-                <div class="space-y-3 pt-2">
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
-                        <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
-                        <span>Requisitos Obligatorios</span>
-                    </h3>
-                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside bg-slate-900/40 p-4 rounded-xl border border-slate-700/40 leading-relaxed">
-                        <li>Formulario de Postulación completo (Anexo 1).</li>
-                        <li>Copia de Acta de Asamblea donde se apruebe la presentación del proyecto.</li>
-                        <li>Certificado de personalidad jurídica vigente.</li>
-                        <li>Certificado de directorio vigente.</li>
-                        <li>Fotocopia de cédula de identidad de él o la representante legal de la organización.</li>
-                        <li>Certificado de cuenta bancaria a nombre de la organización (libreta, certificado de vigencia, antigüedad o cartola con número y titular).</li>
-                        <li>Una cotización por cada gasto contemplado en el proyecto.</li>
-                        <li>Permisos y/o certificados de factibilidad en caso de ameritar (revisar Anexo 2).</li>
-                        <li>Carta de compromiso en caso de ameritar (revisar Anexo 3).</li>
-                        <li>Carta de compromiso Ejecución Conjunta (Anexo 5), para postulación colectiva o asociativa.</li>
-                        <li>Carta de Compromiso Aporte Propio (Anexo 6).</li>
-                    </ul>
-                </div>
-
-                <!-- Dudas o Consultas -->
-                <div class="pt-4 border-t border-slate-700/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs text-slate-400">
-                    <div>
-                        <span class="block font-semibold text-slate-300">Dudas y Consultas:</span>
-                        <a href="mailto:fondostaltal@juntoalbarrio.cl" class="text-amber-400 hover:underline">fondostaltal@juntoalbarrio.cl</a>
-                    </div>
-                    <div class="text-left sm:text-right">
-                        <span class="block font-semibold text-slate-300">Atención en Oficina (Ramírez 163):</span>
-                        <span>Mié y Jue 14:30 - 18:00 &bull; Jue y Vie 09:00 - 13:00</span>
-                    </div>
-                </div>
-
-            </article>
-
-            <!-- TARJETA 4: MURO DE MENSAJES Y CHAT COMUNITARIO (EXTINCIÓN 24 HRS) -->
-            <article id="comunidad" class="scroll-mt-28 bg-slate-800/40 rounded-2xl border border-slate-700/60 p-6 sm:p-8 shadow-xl backdrop-blur-sm transition-all hover:border-slate-600 space-y-6">
-                
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-700/60">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-amber-500/10 p-3 rounded-xl border border-amber-500/20 text-amber-400">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Espacio Comunitario Taltal</span>
-                            <h2 class="text-xl font-bold text-white">Muro de Mensajes en Vivo</h2>
-                        </div>
-                    </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 w-fit">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse mr-1.5"></span>
-                        Mensajes expiran en 24 hrs
-                    </span>
-                </div>
-
-                <!-- Formulario para enviar mensaje -->
-                <form id="chat-form" class="space-y-4 bg-slate-900/60 p-4 sm:p-6 rounded-xl border border-slate-700/50">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-medium text-slate-400 mb-1">Tu Nombre u Organización</label>
-                            <input type="text" id="chat-user" required placeholder="Ej. Junta de Vecinos N°2" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-slate-400 mb-1">Empresa / Fondo al que apunta</label>
-                            <select id="chat-topic" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                <option value="General">General / Comunidad</option>
-                                <option value="Las Cenizas">Grupo Minero Las Cenizas</option>
-                                <option value="Pan American Silver">Pan American Silver</option>
-                                <option value="Fundación Colbún">Fundación Colbún</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Mensaje o Consulta</label>
-                        <textarea id="chat-msg" rows="2" required placeholder="Escribe tu consulta o aviso rápido aquí..." class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
-                    </div>
-                    <div class="flex justify-end">
-                        <button type="submit" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg text-xs transition-colors shadow-md">
-                            Publicar Mensaje &rarr;
-                        </button>
-                    </div>
-                </form>
-
-                <!-- Contenedor de la lista de mensajes en vivo -->
-                <div class="space-y-3 pt-2">
-                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Mensajes Recientes (Últimas 24 horas)</h3>
-                    <div id="chat-messages-container" class="space-y-3 max-h-80 overflow-y-auto pr-1">
-                        <!-- Los mensajes se inyectan dinámicamente aquí -->
-                        <p id="no-messages" class="text-xs text-slate-500 italic text-center py-4">No hay mensajes activos en este momento. ¡Sé el primero en escribir!</p>
-                    </div>
-                </div>
-
-            </article>
-
-        </div>
-
-    </main>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500 mt-16">
-        <p>&copy; 2026 Fondos Concursables Taltal. Esta plataforma es una iniciativa ciudadana y personal, desarrollada de manera independiente y sin fines de lucro, con el único propósito de apoyar a la comunidad.</p>
-    </footer>
-<script>
-    // Sistema de Muro con expiración a 24 horas usando localStorage del navegador
-    const STORAGE_KEY = 'taltal_fondos_chat_v1';
-    const EXPIRATION_TIME = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
-
-    function loadMessages() {
-        const container = document.getElementById('chat-messages-container');
-        const noMsgEl = document.getElementById('no-messages');
-        
-        let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        const now = new Date().getTime();
-
-        // Filtrar mensajes que tengan menos de 24 horas
-        data = data.filter(item => (now - item.timestamp) < EXPIRATION_TIME);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-
-        container.innerHTML = '';
-        if (data.length === 0) {
-            container.innerHTML = '<p id="no-messages" class="text-xs text-slate-500 italic text-center py-4">No hay mensajes activos en este momento. ¡Sé el primero en escribir!</p>';
-            return;
-        }
-
-        data.reverse().forEach(item => {
-            const timeAgo = getTimeAgo(item.timestamp);
-            const card = document.createElement('div');
-            card.className = 'bg-slate-900/40 border border-slate-700/40 p-4 rounded-xl space-y-1.5';
-            card.innerHTML = `
-                <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-amber-400">${escapeHtml(item.user)} <span class="text-slate-500 font-normal">(${escapeHtml(item.topic)})</span></span>
-                    <span class="text-[10px] text-slate-500">${timeAgo}</span>
-                </div>
-                <p class="text-xs text-slate-300 leading-relaxed">${escapeHtml(item.message)}</p>
-            `;
-            container.appendChild(card);
-        });
-    }
-
-    document.getElementById('chat-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const user = document.getElementById('chat-user').value.trim();
-        const topic = document.getElementById('chat-topic').value;
-        const message = document.getElementById('chat-msg').value.trim();
-
-        if(!user || !message) return;
-
-        let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        data.push({
-            user: user,
-            topic: topic,
-            message: message,
-            timestamp: new Date().getTime()
-        });
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-        document.getElementById('chat-msg').value = '';
-        loadMessages();
-    });
-
-    function getTimeAgo(timestamp) {
-        const seconds = Math.floor((new Date().getTime() - timestamp) / 1000);
-        if (seconds < 60) return 'Hace un momento';
-        const minutes = Math.floor(seconds / 60);
-        if (minutes < 60) return `Hace ${minutes} min`;
-        const hours = Math.floor(minutes / 60);
-        return `Hace ${hours} hr${hours > 1 ? 's' : ''}`;
-    }
-
-    function escapeHtml(text) {
-        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-    }
-
-    // Cargar al iniciar la página
-    loadMessages();
-</script>
-</body>
-</html>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-700/30 text-xs text-slate-400 font-medium">• Deporte y Salud (20%)</div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate-700/30 text-xs text-slate-400 font-medium">• Medioambiente y Seguridad (20%)</div>
+                        <div class="bg-slate-800/40 p-3 rounded-lg border border-slate
